@@ -1,4 +1,4 @@
-### windbg-Scanning-ssdt-list
+# windbg-Scanning-ssdt-list
 
 ssdt_x64.txt and  ssdt_x86 are  windbg script. You can use them to get ssdt list under kernel debug mode.
 
