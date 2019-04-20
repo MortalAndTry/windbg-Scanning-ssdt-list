@@ -1,0 +1,15 @@
+.block
+{
+	r $t0 = 83e806f0  
+	r $t1 = 0x191 
+	.for(r $t2 = 0; @$t2 < @$t1; r $t2 = @$t2 + 1)
+	{
+		r $t3 = poi(@$t0+@$t2*4)
+		.foreach (va {u @$t3})
+		{
+			.printf "%d    ", @$t2
+			.echo va
+			.break
+		}
+	}
+}

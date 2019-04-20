@@ -1,0 +1,22 @@
+.block
+{
+	r $t0 = fffff800`03ed9300 
+	r $t1 = 0x191
+	.for(r $t2 = 0; @$t2 < @$t1; r $t2 = @$t2 + 1)
+	{
+		r $t3 = dwo(@$t0+@$t2*4)
+		r $t4 = @$t0 + (@$t3 >> 4)
+		.if(not($vvalid(@$t4, 1)))
+		{
+			.printf "%d    ", @$t2
+			.echo ####################################
+			.continue
+		}
+		.foreach (va {u @$t4})
+		{
+			.printf "%d    ", @$t2
+			.echo va
+			.break
+		}
+	}
+}
